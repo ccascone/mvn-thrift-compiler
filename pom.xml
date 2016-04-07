@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.ccascone</groupId>
+    <groupId>com.github.ccascone</groupId>
     <artifactId>mvn-thrift-compiler</artifactId>
     <version>1.0_0.9.3</version>
     <packaging>jar</packaging>
@@ -31,41 +31,11 @@
     </scm>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.6</version>
-                <executions>
-                    <execution>
-                        <id>package-linux-x86_64</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>linux-x86_64</classifier>
-                            <includes>
-                                <include>${project.basedir}/linux-x86_64/thrift.exe</include>
-                            </includes>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>package-osx-x86_64</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <classifier>osx-x86_64</classifier>
-                            <includes>
-                                <include>${project.basedir}/osx-x86_64/thrift.exe</include>
-                            </includes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+        <resources>
+            <resource>
+                <directory>exe</directory>
+            </resource>
+        </resources>
     </build>
 
 </project>
