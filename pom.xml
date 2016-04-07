@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.ccascone</groupId>
+    <artifactId>thrift-compiler</artifactId>
+    <version>1.0_0.9.3</version>
+    <packaging>jar</packaging>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Pre-compiled Apache Thrift binaries distribution</description>
+    <url>https://github.com/ccascone/mvn-thrift-compiler</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Carmelo Cascone</name>
+            <email>carmelo@ccascone.net</email>
+            <organization>ccascone.net</organization>
+            <organizationUrl>http://ccascone.net</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git@github.com:ccascone/mvn-thrift-compiler.git</connection>
+        <developerConnection>scm:git:git@github.com:ccascone/mvn-thrift-compiler.git</developerConnection>
+        <url>git@github.com:ccascone/mvn-thrift-compiler.git</url>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <id>package-linux-x86_64</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>linux-x86_64</classifier>
+                            <includes>
+                                <include>${project.basedir}/linux-x86_64/thrift.exe</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>package-osx-x86_64</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>osx-x86_64</classifier>
+                            <includes>
+                                <include>${project.basedir}/osx-x86_64/thrift.exe</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
