@@ -8,8 +8,7 @@ Helpful when trying to auto-generate Thrift sources as part of a Maven build wit
 
 ## Example usage
 
-See the [pom.xml](example/pom.xml) in the [example](example/) directory
-for a full working example
+See [example/pom.xml](example/pom.xml) for a full working example
 
 Used in combination with https://github.com/dtrott/maven-thrift-plugin
 
